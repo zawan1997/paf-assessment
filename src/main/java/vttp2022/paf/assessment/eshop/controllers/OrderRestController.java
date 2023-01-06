@@ -21,7 +21,7 @@ public class OrderRestController {
     @Autowired
     WarehouseService warehouseService;
 
-    @PostMapping
+    @PostMapping(path="{/orderId}")
 	public ResponseEntity<String> dispatchMessage(@RequestBody Order order ) {
 
 	 if (warehouseService.dispatch(order)!=null) {
