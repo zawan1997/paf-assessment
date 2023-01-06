@@ -28,14 +28,15 @@ public class WarehouseService {
 		WarehouseService warehouse = new WarehouseService();
 		OrderStatus orderstatus = null;
 
+		//If successful return nothing. If failed return the orderstatus?
 		if (cusRepo.findCustomerByName(order.getName()).isPresent()){
 			while(warehouse.saveOrder(order)!=false);
+			statRepo.insertOrderStatus(orderstatus, order.getOrderId());
+			return null;
+		} else {
+			return orderstatus;
 		}
-		statRepo.insertOrderStatus(orderstatus, order.getOrderId());
-
-		return null;
-
-		
+		//come back to figure out pending/dispatched and timestamp
 	}
 
 	//For task 3 part d

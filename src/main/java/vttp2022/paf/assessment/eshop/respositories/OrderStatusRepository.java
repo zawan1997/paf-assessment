@@ -1,6 +1,5 @@
 package vttp2022.paf.assessment.eshop.respositories;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;

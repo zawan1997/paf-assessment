@@ -34,7 +34,7 @@ public class OrderController {
 			return ResponseEntity
 					.status(HttpStatus.NOT_FOUND)
 					.contentType(MediaType.APPLICATION_JSON)
-					.body("{'error': Customer " + name + "'not found'}");
+					.body("{error: Customer " + name + "not found}");
 		}
 		return ResponseEntity
 				.status(HttpStatus.OK)
